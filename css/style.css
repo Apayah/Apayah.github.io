@@ -11,6 +11,7 @@
 
     body {
       display: flex;
+      flex-direction: column;
       margin: 1em;
       padding: 1em;
     }
@@ -59,4 +60,19 @@
       object-fit: cover;
       object-position: 50% 100%;
       width: 8em;
+    }
+
+    .top {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+    }
+
+    .bottom {
+
+    }
+
+    .search-button:hover {
+      background-color: aquamarine;
+      cursor: pointer;
     }
