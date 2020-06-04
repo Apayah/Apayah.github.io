@@ -137,4 +137,6 @@
     .datetime {
       display: flex;
       justify-content: space-around;
+      align-items: center;
+      color: cornflowerblue;
     }
