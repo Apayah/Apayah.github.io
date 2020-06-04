@@ -10,7 +10,10 @@
   <title>New tab</title>
 </head>
 <body>
-  <h1>Welcome</h1>
+  <div class="datetime">
+    <h1 class="clock" id="clock"></h1>
+    <h3 id="date"></h3>
+  </div>
   <div class="top">
   <nav>
     <ul>
@@ -57,6 +60,46 @@
       </a>
     </div>
   </div>
+
+    <!-- Code for date and time -->
+    <script>
+      var clockElement = document.getElementById("clock");
+
+      function updateClock(clock) {
+          clock.innerHTML = new Date().toTimeString().split(" ")[0];
+      }
+      setInterval(function () {
+          updateClock(clockElement);
+      }, 1000);
+
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1; //January is 0!
+      var d = new Date();
+      var weekday = new Array(7);
+      weekday[0] = "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
+
+      var n = weekday[d.getDay()];
+      var yyyy = today.getFullYear();
+
+      if (dd < 10) {
+          dd = '0' + dd
+      }
+
+      if (mm < 10) {
+          mm = '0' + mm
+      }
+
+      today = dd + '.' + mm + '.' + yyyy;
+
+      date.innerHTML = n + "<br>" + today;
+  </script>
 
   <script type="text/javascript" src="js/script.js"></script>
 
