@@ -64,6 +64,7 @@
     <!-- Code for date and time -->
     <script>
       var clockElement = document.getElementById("clock");
+      clockElement.innerHTML = new Date().toTimeString().split(" ")[0];
 
       function updateClock(clock) {
           clock.innerHTML = new Date().toTimeString().split(" ")[0];
